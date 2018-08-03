@@ -23,7 +23,7 @@ function alwayshttps_dom() {
 	var secureTagNames = [
 		'meta', 'link', 'script', 'embed', 'iframe',
 		'img', 'input', 'source', 'audio', 'video',
-		'track', 'a', 'form', 'object', 'area'
+		'track', 'a', 'form', 'object', 'area', 'applet'
 	];
 
 	for(var i in secureTagNames) {
@@ -38,19 +38,19 @@ function alwayshttps_dom() {
 				case "meta":
 					domAttrName = "content";
 					break;
-				
-				// link->href, a->href
+
+				// link->href, a->href, area->href
 				case "link":
 				case "a":
 				case "area":
 					domAttrName = "href";
 					break;
-					
+
 				// form->action
 				case "form":
 					domAttrName = "action";
 					break;
-					
+
 				// script->src, embed->src, iframe->src, img->src, input->src
 				// source->src, audio->src, video->src, track->src
 				case "script":
@@ -64,9 +64,17 @@ function alwayshttps_dom() {
 				case "track":
 					domAttrName = "src";
 					break;
+
+				// object->data
 				case "object":
 					domAttrName = "data";
 					break;
+
+				// applet->codebase
+				case "applet":
+					domAttrName = "codebase";
+					break;
+
 				default:
 					domAttrName = "";
 			}
