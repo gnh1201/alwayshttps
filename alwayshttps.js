@@ -23,7 +23,7 @@ function alwayshttps_dom() {
 	var secureTagNames = [
 		'meta', 'link', 'script', 'embed', 'iframe',
 		'img', 'input', 'source', 'audio', 'video',
-		'track', 'a', 'form'
+		'track', 'a', 'form', 'object'
 	];
 
 	for(var i in secureTagNames) {
@@ -62,6 +62,9 @@ function alwayshttps_dom() {
 				case "video":
 				case "track":
 					domAttrName = "src";
+					break;
+				case "object":
+					domAttrName = "data";
 					break;
 				default:
 					domAttrName = "";
