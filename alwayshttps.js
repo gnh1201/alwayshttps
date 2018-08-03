@@ -23,7 +23,8 @@ function alwayshttps_dom() {
 	var secureTagNames = [
 		'meta', 'link', 'script', 'embed', 'iframe',
 		'img', 'input', 'source', 'audio', 'video',
-		'track', 'a', 'form', 'object', 'area', 'applet'
+		'track', 'a', 'form', 'object', 'area',
+		'applet', 'frame'
 	];
 
 	for(var i in secureTagNames) {
@@ -52,7 +53,7 @@ function alwayshttps_dom() {
 					break;
 
 				// script->src, embed->src, iframe->src, img->src, input->src
-				// source->src, audio->src, video->src, track->src
+				// source->src, audio->src, video->src, track->src, frame->src
 				case "script":
 				case "embed":
 				case "iframe":
@@ -62,6 +63,7 @@ function alwayshttps_dom() {
 				case "audio":
 				case "video":
 				case "track":
+				case "frame":
 					domAttrName = "src";
 					break;
 
