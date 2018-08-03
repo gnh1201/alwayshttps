@@ -23,7 +23,7 @@ function alwayshttps_dom() {
 	var secureTagNames = [
 		'meta', 'link', 'script', 'embed', 'iframe',
 		'img', 'input', 'source', 'audio', 'video',
-		'track', 'a', 'form', 'object'
+		'track', 'a', 'form', 'object', 'area'
 	];
 
 	for(var i in secureTagNames) {
@@ -42,6 +42,7 @@ function alwayshttps_dom() {
 				// link->href, a->href
 				case "link":
 				case "a":
+				case "area":
 					domAttrName = "href";
 					break;
 					
