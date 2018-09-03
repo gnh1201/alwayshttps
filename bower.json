@@ -1,0 +1,20 @@
+{
+  "name": "alwayshttps",
+  "main": "alwayshttps.js",
+  "homepage": "https://github.com/gnh1201/alwayshttps",
+  "authors": [
+    "Go Namhyeon <gnh1201@gmail.com>"
+  ],
+  "description": "HTTPS (Secure HTTP) always maintainer",
+  "keywords": [
+    "https"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
