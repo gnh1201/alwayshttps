@@ -1,5 +1,5 @@
 # alwayshttps.js
-Alwayshttps.js keeps your web site's HTTPS connection up at all times.
+Alwayshttps.js keeps your website's HTTPS connection up at all times.
 
 ## pros
 - Helps you stay out of HTTPS connections.
