@@ -24,7 +24,7 @@ function alwayshttps_dom() {
 		'meta', 'link', 'script', 'embed', 'iframe',
 		'img', 'input', 'source', 'audio', 'video',
 		'track', 'a', 'form', 'object', 'area',
-		'applet', 'frame'
+		'applet', 'frame', 'param'
 	];
 
 	for(var i in secureTagNames) {
@@ -75,6 +75,11 @@ function alwayshttps_dom() {
 				// applet->codebase
 				case "applet":
 					domAttrName = "codebase";
+					break;
+
+				// object->param->value
+				case "param":
+					domAttrName = "value";
 					break;
 
 				default:
