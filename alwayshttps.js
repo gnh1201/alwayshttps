@@ -101,26 +101,21 @@ function alwayshttps_dom() {
     }
 }
 
-function alwayshttps_load() {
+// initialize AlwaysHTTP
+function alwayshttps_init() {
     alwayshttps_redirect();
+    alwayshttps_work();
+}
+
+// check AlwaysHTTP integrity each 0.3 seconds
+function alwayshttps_work() {
     alwayshttps_dom();
+    setTimeout(alwayshttps_work, 300);
 }
 
-function alwayshttps_polling() {
-    alwayshttps_dom();
-    setTimeout(alwayshttps_polling, 300);
+// load AlwaysHTTP when ready document
+if(typeof(jQuery) !== "undefined") {
+    jQuery(document).ready(function() { alwayshttps_init(); });
+} else {
+    window.onload = function() { alwayshttps_init(); };
 }
-
-function alwayshttps_main() {
-    // load AlwaysHTTP when ready document
-    if(typeof(jQuery) !== "undefined") {
-        jQuery(document).ready(function() { alwayshttps_load(); });
-    } else {
-        window.onload = function() { alwayshttps_load(); };
-    }
-
-    // check AlwaysHTTP integrity each 0.3 seconds
-    alwayshttps_polling();
-}
-
-alwayshttps_main();
