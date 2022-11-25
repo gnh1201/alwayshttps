@@ -12,4 +12,4 @@ Alwayshttps.js keeps your website's HTTPS connection up at all times.
 - bower install alwayshttps
 
 ## contact me
-- Go Namhyeon <gnh1201@gmail.com>
+- Go Namhyeon <abuse@catswords.net>
